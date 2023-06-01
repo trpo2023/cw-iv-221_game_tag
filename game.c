@@ -76,14 +76,3 @@ void move(int board[SIZE][SIZE], char command) {
         swap(&board[x][y], &board[x][y - 1]);
     }
 }
-
-void displayTimeAndMoves(time_t startTime, int moves) {
-    time_t currentTime = time(NULL);
-    int elapsedTime = (int)(currentTime - startTime);
-    int seconds = elapsedTime % 60;
-    int minutes = (int)((elapsedTime / 60) % 60);
-    int hours = (int)(elapsedTime / 3600);
-
-    printf("Время: %02d:%02d:%02d\n", hours, minutes, seconds);
-    printf("Количество ходов: %d\n", moves);
-}
