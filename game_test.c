@@ -1,6 +1,9 @@
 #include "unity.h"
 #include "game.h"
 
+void setUp(void) { /* Do nothing */ }
+void tearDown(void) { /* Do nothing */ }
+
 void test_swap(void) {
     int a = 5;
     int b = 10;
