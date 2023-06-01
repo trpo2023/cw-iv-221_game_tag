@@ -7,7 +7,7 @@ OBJ_TESTS = unity.o game.o game_test.o
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-TagGame: $(OBJ_MAIN)
+main: $(OBJ_MAIN)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 game_test: $(OBJ_TESTS)
@@ -16,4 +16,4 @@ game_test: $(OBJ_TESTS)
 .PHONY: clean
 
 clean:
-	rm -f *.o TagGame game_test
+	rm -f *.o main game_test
