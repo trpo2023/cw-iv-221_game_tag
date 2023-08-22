@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up CMake
-      uses: mloskot/setup-cmake@v1
+      uses: trpo2023/cw-iv-221_game_tag
       with:
         cmake-version: '3.21'
 
