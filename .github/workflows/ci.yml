@@ -1,28 +1,19 @@
-name: CI
+name: Build
 
-on: [push]
+on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up CMake
-      uses: trpo2023/cw-iv-221_game_tag
-      with:
-        cmake-version: '3.21'
+      - name: Check codestyle
+        run: git ls-files *.{c,h} | xargs clang-format -i --verbose && git diff --exit-code
 
-    - name: Build
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        cmake --build .
-    
-    - name: Run tests
-      run: |
-        cd build
-        ctest -VV
+      - name: Build application
+        run: make
+
+      - name: Test app
+        run: make game_test
