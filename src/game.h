@@ -7,7 +7,7 @@
 void printBoard(int board[SIZE][SIZE]);
 
 // Обмен значениями двух переменных
-void swap(int* a, int* b);
+void swap(int *a, int *b);
 
 // Перемешивание игровой доски
 void shuffle(int board[SIZE][SIZE]);
