@@ -188,11 +188,6 @@ typedef unsigned long UNITY_UINT64;
 typedef signed long UNITY_INT64;
 #else
 #error Invalid UNITY_LONG_WIDTH specified! (32 or 64 are supported)
-#endif
-typedef UNITY_UINT64 UNITY_UINT;
-typedef UNITY_INT64 UNITY_INT;
-//#define UNITY_MAX_NIBBLES 16 // Maximum number of nibbles in a UNITY_(U)INT 
-#endif
 
 /*-------------------------------------------------------
  * Pointer Support
