@@ -10,11 +10,10 @@ OBJ_TESTS = src/game.o tests/game_test.o
 main: $(OBJ_MAIN)
 	$(CC) -o $@ $^ $(CFLAGS)
 
-test: $(OBJ_TESTS)
+game_test: $(OBJ_TESTS)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 .PHONY: clean
 
 clean:
-	rm -f *.o main test
-
+	rm -f *.o main game_test
