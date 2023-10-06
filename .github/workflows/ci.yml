@@ -15,5 +15,5 @@ jobs:
       - name: Build application
         run: make
 
-      - name: Test app
+      - name: Run Tests
         run: make game_test
