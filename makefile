@@ -12,6 +12,7 @@ main: $(OBJ_MAIN)
 
 game_test: $(OBJ_TESTS)
 	$(CC) -o $@ $^ $(CFLAGS)
+	./game_test
 
 .PHONY: clean
 
