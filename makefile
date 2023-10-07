@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -I. -I./src -Wall -Wextra
 DEPS = src/game.h
 OBJ_MAIN = src/main.o src/game.o
-OBJ_TESTS = src/game.o tests/game_test.o
+OBJ_TESTS = tests/game_test.o src/game.o
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
@@ -10,7 +10,10 @@ OBJ_TESTS = src/game.o tests/game_test.o
 main: $(OBJ_MAIN)
 	$(CC) -o $@ $^ $(CFLAGS)
 
-game_test: $(OBJ_TESTS)
+main_test.o: tests/main_test.c
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+game_test: $(OBJ_TESTS) main_test.o
 	$(CC) -o $@ $^ $(CFLAGS)
 	./game_test
 
